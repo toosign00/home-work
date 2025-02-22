@@ -2,7 +2,12 @@
 
 **13기 노현수**
 
-## 마크다운
+## 1~2주 차
 
 - [마크다운 문법](./src/md/markdown.md)
 - [회고](./src/md/retrospect.md)
+
+## 3주 차
+
+- [아바타 페이지](./src/avatars/avatars.html)
+- [회고](./src/avatars/avatars.md)
