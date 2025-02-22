@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avatars 과제</title>
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/toosign.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="../assets/favicon/toosign.svg" />
+    <link
+      rel="preload"
+      as="font"
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Regular.woff2"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css"
+    />
+    <link rel="stylesheet" href="../assets/common/modern-reset.css" />
+    <link rel="stylesheet" href="./styles/avatars.css" />
+  </head>
+  <body>
+    <section class="avatar-section" aria-labelledby="avatar-section-title">
+      <h2 class="sr-only">아바타 상태 목록</h2>
+      <div class="avatar-layout">
+        <ul
+          class="avatar-list"
+          role="list"
+          aria-label="오프라인 및 온라인 상태 아바타 목록"
+        >
+          <li class="avatar-item">
+            <img
+              src="./images/face1.jpg"
+              alt="김아현"
+              title="김아현 (오프라인)"
+              aria-label="김아현 (오프라인)"
+              width="64"
+              height="64"
+              loading="lazy"
+              tabindex="0"
+            />
+            <span class="offline" aria-hidden="true"></span>
+          </li>
+          <li class="avatar-item" aria-current="true">
+            <img
+              src="./images/face2.jpg"
+              alt="여성 모델"
+              title="여성 모델 (온라인)"
+              aria-label="여성 모델 (온라인)"
+              width="64"
+              height="64"
+              loading="lazy"
+              tabindex="0"
+            />
+            <span class="online" aria-hidden="true"></span>
+          </li>
+          <li class="avatar-item">
+            <img
+              src="./images/face3.jpg"
+              alt="여성 모델"
+              title="여성 모델 (오프라인)"
+              aria-label="여성 모델 (오프라인)"
+              width="64"
+              height="64"
+              loading="lazy"
+              tabindex="0"
+            />
+            <span class="offline" aria-hidden="true"></span>
+          </li>
+          <li class="avatar-item">
+            <img
+              src="./images/face4.jpg"
+              alt="혜리"
+              title="혜리 (온라인)"
+              aria-label="혜리 (온라인)"
+              width="64"
+              height="64"
+              loading="lazy"
+              tabindex="0"
+            />
+            <span class="online" aria-hidden="true"></span>
+          </li>
+        </ul>
+
+        <ul
+          class="avatar-list"
+          role="list"
+          aria-label="오프라인 및 온라인 상태 아바타 목록"
+        >
+          <li class="avatar-item">
+            <img
+              src="./images/face5.jpg"
+              alt="남성 모델"
+              title="남성 모델 (온라인)"
+              aria-label="남성 모델 (온라인)"
+              width="64"
+              height="64"
+              loading="lazy"
+              tabindex="0"
+            />
+            <span class="online" aria-hidden="true"></span>
+          </li>
+          <li class="avatar-item">
+            <img
+              src="./images/face6.jpg"
+              alt="류완규"
+              title="류완규 (온라인)"
+              aria-label="류완규 (온라인)"
+              width="64"
+              height="64"
+              loading="lazy"
+              tabindex="0"
+            />
+            <span class="online" aria-hidden="true"></span>
+          </li>
+          <li class="avatar-item">
+            <img
+              src="./images/face7.jpg"
+              alt="이수혁"
+              title="이수혁 (오프라인)"
+              aria-label="이수혁 (오프라인)"
+              width="64"
+              height="64"
+              loading="lazy"
+              tabindex="0"
+            />
+            <span class="offline" aria-hidden="true"></span>
+          </li>
+          <li class="avatar-item">
+            <img
+              src="./images/face8.jpg"
+              alt="버논"
+              title="버논 (오프라인)"
+              aria-label="버논 (오프라인)"
+              width="64"
+              height="64"
+              loading="lazy"
+              tabindex="0"
+            />
+            <span class="offline" aria-hidden="true"></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

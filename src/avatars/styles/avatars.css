@@ -1,0 +1,80 @@
+/* 접근성 스타일 (시각적으로 숨김) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+/* 아바타 섹션 */
+.avatar-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px; 
+}
+
+/* 아바타 레이아웃 */
+.avatar-layout {
+  width: 396px;
+  height: 195px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 아바타 리스트 */
+.avatar-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* 아바타 아이템 */
+.avatar-item {
+  position: relative;
+  padding: 10px;
+
+  /* 아바타 이미지 */
+  img {
+    border-radius: 50%;
+  }
+
+  /* 상태 표시 */
+  span::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    transition:
+      background-color 0.3s,
+      transform 0.2s;
+  }
+
+  /* 상태별 색상 */
+
+  /* 온라인 */
+  span.online::after {
+    background-color: #4cfe88;
+  }
+
+  /* 오프라인 */
+  span.offline::after {
+    background-color: #dbdbdb;
+  }
+}
