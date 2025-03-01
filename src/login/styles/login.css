@@ -1,0 +1,202 @@
+@import "../../assets/common/modern-reset.css";
+@import "../../assets/common/a11y.css";
+
+* body,
+* body::before,
+* body::after {
+  font-size: 16px;
+}
+
+:root {
+  --primary-color: #03cf5d;
+  --black: #121212;
+  --white: #ffffff;
+  --focus-border: #24388d;
+  --focus: #e9f0fd;
+  --gray: #dadada;
+}
+
+@media (min-width: 768px) {
+  :root {
+    font-size: 18px;
+  }
+}
+body {
+  font-family: "SUIT", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login {
+  width: 100%;
+  max-width: 31.25rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1.25rem;
+  padding: 4.375rem 1.25rem 7.25rem 1.25rem;
+  background-color: var(--white);
+  border-radius: 0.625rem;
+  box-shadow: 0rem 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+
+  .brand {
+    margin-bottom: 1.5rem;
+  }
+
+  .logo {
+    display: block;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .input-wrapper {
+    width: 100%;
+
+    input {
+      width: 100%;
+      height: 2.8125rem;
+      padding: 0.875rem;
+      background: var(--white);
+      border: 0.0625rem solid var(--gray);
+      font-size: 0.875rem;
+      transition: all 0.2s ease-in-out;
+
+      &:focus {
+        border-color: var(--focus-border);
+        background-color: var(--focus);
+        outline: none;
+      }
+    }
+  }
+
+  .login-wrapper {
+    button {
+      width: 100%;
+      height: 2.8125rem;
+      background-color: var(--primary-color);
+      color: var(--white);
+      border: 0.0625rem solid var(--gray);
+      outline: none;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 0.625rem;
+      transition: border-color 0.2s ease-in-out;
+
+      &:focus {
+        border-color: var(--focus-border);
+      }
+    }
+  }
+
+  .login-options-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      justify-content: end;
+    }
+
+    .ip-security {
+      display: flex;
+      justify-content: end;
+      gap: 0.5rem;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+
+      a {
+        color: var(--black);
+        text-decoration: none;
+        font-size: 1rem;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+
+      .toggle-checkbox {
+        opacity: 0;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      .toggle-button {
+        background: none;
+        border: none;
+        color: var(--gray);
+        font-size: 1rem;
+        cursor: pointer;
+        white-space: nowrap;
+        font-weight: 700;
+        position: relative;
+        min-width: 2.5rem;
+        text-align: center;
+      }
+
+      /* 기본 상태 (OFF) */
+      .toggle-button::before {
+        content: "OFF";
+        display: inline-block;
+      }
+
+      /* 체크되었을 때 (ON 상태) */
+      .toggle-checkbox:checked + .toggle-button::before {
+        content: "ON";
+        color: var(--primary-color);
+      }
+    }
+    .checkbox-wrapper {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      cursor: pointer;
+      gap: 0.3125rem;
+
+      input {
+        appearance: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url("../../assets/images/unchecked.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        border: none;
+
+        &:focus {
+          border: 0.0313rem solid var(--focus-border);
+        }
+
+        &:checked {
+          background-image: url("../../assets/images/checked.svg");
+        }
+      }
+    }
+  }
+}
