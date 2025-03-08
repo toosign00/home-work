@@ -1,0 +1,195 @@
+@import "./card-component.css";
+
+/* data-theme 값에 따른 카드 텍스트, 카드 버튼 배경, 카드 버튼 텍스트 컬러 설정 */
+:root,
+[data-theme="dark"] {
+  --card-text-color: var(--white);
+  --card-button-bg: var(--blue-300);
+  --card-button-text-color: var(--white);
+  --card-item-button-buy-color: #000;
+}
+
+[data-theme="light"] {
+  --card-text-color: var(--black);
+  --card-button-bg: var(--black);
+  --card-button-text-color: var(--white);
+  --card-item-button-buy-color: var(--white);
+}
+
+/* 바디 */
+body {
+  font-family: "Apple SD Gothic Neo, sans-serif";
+}
+
+/* 전체 카드 레이아웃을 감싸는 컨테이너 */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--base-spacing);
+
+  /* 화면이 넓어지면 2열 배치 */
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    /* 해당 class는 두 칸을 차지하도록 설정 */
+    .card-item--wide {
+      grid-column: span 2;
+    }
+  }
+}
+
+/* iPad Pro 기본 상태 : 작은 화면 (1024px 미만) */
+.ipad-pro {
+  /* image-set을 미지원하는 브라우저용 기본 JPEG */
+  background: url("../products/ipad_pro.jpeg") no-repeat center/cover;
+  background: image-set(
+      /* 1x: WebP 우선, 지원 안되면 JPEG */ url("../products/ipad_pro.webp")
+        type("image/webp") 1x,
+      url("../products/ipad_pro.jpeg") type("image/jpeg") 1x,
+      /* 2x: WebP 우선, 지원 안되면 JPEG */ url("../products/ipad_pro_2x.webp")
+        type("image/webp") 2x,
+      url("../products/ipad_pro_2x.jpeg") type("image/jpeg") 2x
+    )
+    no-repeat center/cover;
+
+  /* 1024px 이상: 와이드 이미지셋 적용 - nesting 사용 */
+  @media (min-width: 1024px) {
+    /* image-set을 미지원하는 브라우저용 기본 wide JPEG */
+    background: url("../products/ipad_pro_wide.jpeg") no-repeat center bottom/cover;
+    background: image-set(
+        /* 1x: WebP 우선, 지원 안되면 JPEG */
+          url("../products/ipad_pro_wide.webp") type("image/webp") 1x,
+        url("../products/ipad_pro_wide.jpeg") type("image/jpeg") 1x,
+        /* 2x: WebP 우선, 지원 안되면 JPEG */
+          url("../products/ipad_pro_wide_2x.webp") type("image/webp") 2x,
+        url("../products/ipad_pro_wide_2x.jpeg") type("image/jpeg") 2x
+      )
+      no-repeat center/cover;
+  }
+}
+
+/* iPad air 기본 상태 : 작은 화면 (1024px 미만) */
+.ipad-air {
+  /* image-set을 미지원하는 브라우저용 기본 JPEG */
+  background: url("../products/ipad_air.jpeg") no-repeat center/cover;
+
+  background: image-set(
+      /* 1x: WebP 우선, 지원 안되면 JPEG */ url("../products/ipad_air.webp")
+        type("image/webp") 1x,
+      url("../products/ipad_air.jpeg") type("image/jpeg") 1x,
+      /* 2x: WebP 우선, 지원 안되면 JPEG */ url("../products/ipad_air_2x.webp")
+        type("image/webp") 2x,
+      url("../products/ipad_air_2x.jpeg") type("image/jpeg") 2x
+    )
+    no-repeat center/cover;
+
+  /* 1024px 이상: 와이드 이미지셋 적용 */
+  @media (min-width: 1024px) {
+    /* image-set을 미지원하는 브라우저용 기본 wide JPEG */
+    background: url("../products/ipad_air_wide.jpeg") no-repeat center/cover;
+    background: image-set(
+        /* 1x: WebP 우선, 지원 안되면 JPEG */
+          url("../products/ipad_air_wide.webp") type("image/webp") 1x,
+        url("../products/ipad_air_wide.jpeg") type("image/jpeg") 1x,
+        /* 2x: WebP 우선, 지원 안되면 JPEG */
+          url("../products/ipad_air_wide_2x.webp") type("image/webp") 2x,
+        url("../products/ipad_air_wide_2x.jpeg") type("image/jpeg") 2x
+      )
+      no-repeat center/cover;
+  }
+}
+
+/* iPhone 15 Pro 기본 상태 : 작은 화면 (1024px 미만) */
+.iphone15-pro {
+  /* image-set을 미지원하는 브라우저용 기본 JPEG */
+  background: url("../products/iphone15_pro.jpeg") no-repeat center/cover;
+
+  background: image-set(
+      /* 1x: WebP 우선, 지원 안되면 JPEG */ url("../products/iphone15_pro.webp")
+        type("image/webp") 1x,
+      url("../products/iphone15_pro.jpeg") type("image/jpeg") 1x,
+      /* 2x: WebP 우선, 지원 안되면 JPEG */
+        url("../products/iphone15_pro_2x.webp") type("image/webp") 2x,
+      url("../products/iphone15_pro_2x.jpeg") type("image/jpeg") 2x
+    )
+    no-repeat center/cover;
+
+  /* 1024px 이상: 와이드 이미지셋 적용 */
+  @media (min-width: 1024px) {
+    /* image-set을 미지원하는 브라우저용 기본 wide JPEG */
+    background: url("../products/iphone15_pro_wide.jpeg") no-repeat center/cover;
+    background: image-set(
+        /* 1x: WebP 우선, 지원 안되면 JPEG */
+          url("../products/iphone15_pro_wide.webp") type("image/webp") 1x,
+        url("../products/iphone15_pro_wide.jpeg") type("image/jpeg") 1x,
+        /* 2x: WebP 우선, 지원 안되면 JPEG */
+          url("../products/iphone15_pro_wide_2x.webp") type("image/webp") 2x,
+        url("../products/iphone15_pro_wide_2x.jpeg") type("image/jpeg") 2x
+      )
+      no-repeat center/cover;
+  }
+}
+
+/* iPhone 15 기본 상태 : 작은 화면 (1024px 미만) */
+.iphone15 {
+  /* image-set을 미지원하는 브라우저용 기본 JPEG */
+  background: url("../products/iphone15.jpeg") no-repeat center/cover;
+
+  background: image-set(
+      /* 1x: WebP 우선, 지원 안되면 JPEG */ url("../products/iphone15.webp")
+        type("image/webp") 1x,
+      url("../products/iphone15.jpeg") type("image/jpeg") 1x,
+      /* 2x: WebP 우선, 지원 안되면 JPEG */ url("../products/iphone15_2x.webp")
+        type("image/webp") 2x,
+      url("../products/iphone15_2x.jpeg") type("image/jpeg") 2x
+    )
+    no-repeat center/cover;
+}
+
+/* Apple Watch 기본 상태 : 작은 화면 (1024px 미만) */
+.apple-watch {
+  /* image-set을 미지원하는 브라우저용 기본 JPEG */
+  background: url("../products/apple_watch.jpeg") no-repeat center/cover;
+
+  background: image-set(
+      /* 1x: WebP 우선, 지원 안되면 JPEG */ url("../products/apple_watch.webp")
+        type("image/webp") 1x,
+      url("../products/apple_watch.jpeg") type("image/jpeg") 1x,
+      /* 2x: WebP 우선, 지원 안되면 JPEG */
+        url("../products/apple_watch_2x.webp") type("image/webp") 2x,
+      url("../products/apple_watch_2x.jpeg") type("image/jpeg") 2x
+    )
+    no-repeat center/cover;
+}
+
+/* MacBook Air 기본 상태 : 작은 화면 (1024px 미만) */
+.macbook-air {
+  /* image-set을 미지원하는 브라우저용 기본 JPEG */
+  background: url("../products/macbook_air.jpeg") no-repeat center/cover;
+
+  background: image-set(
+      /* 1x: WebP 우선, 지원 안되면 JPEG */ url("../products/macbook_air.webp")
+        type("image/webp") 1x,
+      url("../products/macbook_air.jpeg") type("image/jpeg") 1x,
+      /* 2x: WebP 우선, 지원 안되면 JPEG */
+        url("../products/macbook_air_2x.webp") type("image/webp") 2x,
+      url("../products/macbook_air_2x.jpeg") type("image/jpeg") 2x
+    )
+    no-repeat center/cover;
+}
+
+/* AirPods Pro 기본 상태 : 작은 화면 (1024px 미만) */
+.airpods-pro {
+  /* image-set을 미지원하는 브라우저용 기본 JPEG */
+  background: url("../products/airpods_pro.jpeg") no-repeat center/cover;
+
+  background: image-set(
+      /* 1x: WebP 우선, 지원 안되면 JPEG */ url("../products/airpods_pro.webp")
+        type("image/webp") 1x,
+      url("../products/airpods_pro.jpeg") type("image/jpeg") 1x,
+      /* 2x: WebP 우선, 지원 안되면 JPEG */
+        url("../products/airpods_pro_2x.webp") type("image/webp") 2x,
+      url("../products/airpods_pro_2x.jpeg") type("image/jpeg") 2x
+    )
+    no-repeat center/cover;
+}

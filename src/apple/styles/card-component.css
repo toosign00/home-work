@@ -1,0 +1,114 @@
+@import "./reset.css";
+@import "./theme.css";
+@import "./base.css";
+
+/* 각 카드 아이템 */
+.card-item {
+  width: 100%;
+  height: var(--size);
+  color: var(--card-text-color);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: var(--large-spacing);
+
+  @media (min-width: 1024px) {
+    padding-top: var(--extra-large-spacing);
+    padding-block-start: var(--extra-large-spacing);
+  }
+  /* 카드 아이템 이미지 설명 */
+  .card-item__content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: var(--small-spacing);
+
+    /* 카드 아이템 이미지 설명 제목 */
+  .card-item__title {
+    font-size: var(--large-text);
+    font-weight: 700;
+
+    @media (min-width: 1024px) {
+      font-size: var(--extra-large-text);
+    }
+  }
+
+  /* 카드 아이템 이미지 설명 부제목 컨테이너 */
+  .card-item__subtitle-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 카드 아이템 이미지 설명 부제목 */
+  .card-item__subtitle {
+    font-size: var(--base-text);
+    font-weight: 400;
+    line-height: var(--line-normal);
+
+    @media (min-width: 1024px) {
+      font-size: var(--medium-text);
+    }
+  }
+
+  /* 카드 아이템 이미지 설명 출시일 */
+  .card-item__release-info {
+    font-size: var(--small-text);
+    font-weight: 400;
+    color: var(--gray);
+  }
+
+  /* 카드 아이템 버튼 컨테이너 */
+  .card-item__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--base-spacing);
+
+    /* 카드 아이템 버튼 공통 */
+    .card-item__button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--x-small-spacing) var(--small-spacing);
+      font-size: var(--xx-small-text);
+      font-weight: 400;
+      border-radius: 6.25rem;
+      color: var(--card-button-text-color);
+
+      @media (min-width: 1024px) {
+        font-size: var(--x-small-text);
+      }
+    }
+
+    /* 카드 아이템 버튼 더보기 */
+    .card-item__button--more {
+      background: var(--card-button-bg);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    /* 카드 아이템 버튼 구매하기 */
+    .card-item__button--buy {
+      background: var(--card-item-button-buy-color);
+      border: 0.0625rem solid var(--card-button-bg);
+      color: var(--card-button-bg);
+
+      &:hover {
+        background: var(--card-button-bg);
+        color: var(--card-button-text-color);
+      }
+    }
+
+    /* ipad Air 전용 배경 */
+    .ipad-air-gradient {
+      background: linear-gradient(90deg, #bde3f0 0%, #c2e4f0 100%);
+    }
+  }
+  }
+}
