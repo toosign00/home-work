@@ -1,6 +1,7 @@
 @import "./reset.css";
 @import "./theme.css";
 @import "./base.css";
+@import "./apple.css";
 
 /* 각 카드 아이템 */
 .card-item {

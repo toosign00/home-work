@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -6,11 +6,50 @@
     <title>Apple Card Component</title>
     <link rel="icon" href="./favicon/apple-favicon.svg" />
     <link rel="apple-touch-icon" href="./favicon/apple-favicon.svg" />
-    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/card-component.css" />
   </head>
   <body>
-    <!-- 카드 컴포넌트 -->
-
+    <!-- 컴포넌트 사용방법 -->
+    <!-- 1. class, aria-labelledby, aria-labelledby에 대응하는 id에 알맞는 제품명을 넣을 것 ex) ipad-pro -->
+    <!-- 2. 특히, section의 class의 제품명의 경우, background 이미지가 적용됨. apple.css에 해당하는 class명 및 이미지를 확인 할 것 -->
+    <!-- 2. 제품 설명, 출시일 정보, 버튼 텍스트, 버튼 링크를 알맞게 수정할 것, 출시일 정보는 필요시 주석을 해제하고 사용할 것(기본 상태 주석처리) -->
+    <!-- 3. 버튼 텍스트는 가격 보기, 더 알아보기로 고정되어 있으며, 버튼 링크는 #으로 설정되어 있음. 알맞는 링크로 넣을 것  -->
+    <!-- 4. data-theme 속성은 light, dark 두 가지만 사용 가능하며, 각각 밝은 테마, 어두운 테마에 대응함. (기본 상태 light) -->
+    <!-- 5. 제품명은 h2 요소로 작성하고, 제품 설명은 p 요소로 작성할 것, 제품명에 알맞는 제품명을 넣을 것 -->
+    
+    <section
+      class="card-item 제품명 card-item--wide"
+      data-theme="light"
+      aria-labelledby="제품명-title"
+    >
+      <div class="card-item__content">
+        <h2 class="card-item__title" id="제품명-title">제품명</h2>
+        <div class="card-item__subtitle-container">
+          <p class="card-item__subtitle"
+            >제품 설명</p
+          >
+        </div>
+        <!-- <p class="card-item__release-info">출시일 추후 공개</p> -->
+        <div class="card-item__buttons">
+          <a
+            href="#"
+            class="card-item__button card-item__button--more"
+            aria-label="제품명의 새로운 기능과 디자인 더 알아보기"
+            >더 알아보기</a
+          >
+          <a
+            href="#"
+            class="card-item__button card-item__button--buy"
+            aria-label="제품명의 가격 정보 및 구매 옵션 보기"
+            >가격 보기</a
+          >
+        </div>
+      </div>
+    </section>
+    
   </body>
 </html>
