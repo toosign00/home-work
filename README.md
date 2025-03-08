@@ -18,3 +18,12 @@
 - [로그인 UI HTML](./src/login/login.html)
 - [로그인 UI CSS](./src/login/styles/login.css)
 - [회고](./src/login/login.md)
+
+
+## 5주 차
+
+- [Apple HTML](./src/apple/apple.html)
+- [Apple CSS](./src/apple/styles/apple.css)
+- [Apple Card 컴포넌트 HTML](./src/apple/card-component.html)
+- [Apple Card 컴포넌트 CSS](./src/apple/styles/card-component.css)
+- [회고](./src/apple/apple.md)
