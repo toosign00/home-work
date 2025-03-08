@@ -16,11 +16,6 @@
   --card-item-button-buy-color: var(--white);
 }
 
-/* 바디 */
-body {
-  font-family: "Apple SD Gothic Neo, sans-serif";
-}
-
 /* 전체 카드 레이아웃을 감싸는 컨테이너 */
 .card-container {
   display: grid;
